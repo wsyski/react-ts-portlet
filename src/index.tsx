@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import 'react-provider';
+import 'react-provider';
 
 import AppComponent, {LiferayParams} from './AppComponent';
 
