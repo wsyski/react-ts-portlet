@@ -1,14 +1,13 @@
 {
   "name": "react-ts-portlet",
+  "version": "1.0.0",
+  "description": "React typescript portlet",
   "license": "UNLICENSED",
   "main": "index.js",
-  "private": true,
   "engines": {
     "node": "=16",
     "yarn": "1.x"
   },
-  "version": "1.0.0",
-  "description": "React typescript portlet",
   "dependencies": {
     "@liferay/portal-7.4": "*"
   },
@@ -46,5 +45,17 @@
     "build": "tsc -b tsconfig.prod.json && cross-env NODE_ENV=production babel --source-maps -d build out-tsc && run-s scss copy-assets && cross-env NODE_ENV=production liferay-npm-bundler",
     "clean": "liferay clean",
     "deploy": "liferay deploy"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
