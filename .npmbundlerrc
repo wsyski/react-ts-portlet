@@ -7,6 +7,9 @@
     },
     "strictGlobalDependencies": true
   },
+  "exclude": {
+    "*": ["**/tests/**/*", "**/test/**/*", "**/__tests__/**/*"]
+  },
   "create-jar": {
     "features": {
       "js-extender": true,
