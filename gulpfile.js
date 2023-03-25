@@ -7,18 +7,18 @@ var buildUtils = require('./scripts/build-utils');
 
 gulp.task('scss', () => {
 	return gulp
-		.src(['./assets/css/**/*.scss'])
+		.src(['./src/css/**/*.scss'])
 		.pipe(
 			sass({includePaths: 'node_modules/@clayui/css/src/scss'}).on(
 				'error',
 				sass.logError
 			)
 		)
-		.pipe(gulp.dest('./assets/css'));
+		.pipe(gulp.dest('./src/css'));
 });
 
 gulp.task('scss:watch', () => {
-	gulp.watch('./assets/css/**/*.scss', ['sass']);
+	gulp.watch('./src/css/**/*.scss', ['sass']);
 });
 
 gulp.task('publish', (cb) => {

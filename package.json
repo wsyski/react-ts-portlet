@@ -41,10 +41,11 @@
   "scripts": {
     "scss": "gulp scss",
     "scss:watch": "gulp scss:watch",
-    "copy-assets": "cpx \"./assets/**\" build",
-    "build": "tsc -b tsconfig.prod.json && cross-env NODE_ENV=production babel --source-maps -d build out-tsc && run-s scss copy-assets && cross-env NODE_ENV=production liferay-npm-bundler",
+    "copy-assets": "cpx \"./src/css/**\" build/css",
+    "build": "run-s tsc && run-s copy-assets && cross-env NODE_ENV=production liferay build",
     "clean": "liferay clean",
-    "deploy": "liferay deploy"
+    "deploy": "liferay deploy",
+    "tsc": "tsc -b tsconfig.prod.json"
   },
   "browserslist": {
     "production": [
