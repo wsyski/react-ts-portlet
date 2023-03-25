@@ -1,3 +1,3 @@
-# react-portlet-ts
+# react-ts-portlet
 
-React Portlet
+React typescript portlet

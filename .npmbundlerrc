@@ -7,10 +7,9 @@
     }
   },
   "create-jar": {
-    "output-filename": "react-portlet-ts.jar",
     "features": {
       "js-extender": true,
-      "web-context": "/react-portlet-ts"
+      "web-context": "/react-ts-portlet"
     }
   },
   "dump-report": true,
