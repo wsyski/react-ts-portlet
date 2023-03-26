@@ -1,8 +1,7 @@
 {
     "extends": "./tsconfig.declarations.json",
     "compilerOptions": {
-        "baseUrl": ".",
-        "outDir": "out-tsc",
+        "noEmit": false
     },
     "include": [
         "src/**/*.ts",
@@ -12,7 +11,6 @@
         "src/**/__tests__/**/*",
         "src/**/__mocks__/**/*",
         "src/setupTests.ts",
-        "node_modules",
-        "**/*.test.ts"
+        "node_modules"
     ]
 }
