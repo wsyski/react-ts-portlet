@@ -1,7 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/liferay/liferay-frontend-projects/master/maintenance/projects/js-toolkit/resources/schemas/configuration.schema.json",
   "system": {
-    "category": "react-ts-portlet",
     "name": "react-ts-portlet",
     "fields": {
       "fruit": {
