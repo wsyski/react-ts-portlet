@@ -5,8 +5,9 @@ import ReactDOM from 'react-dom';
 import AppComponent, {LiferayParams} from './AppComponent';
 
 export default function main(liferayParams: LiferayParams) {
+	 const rootElement = React.createElement(AppComponent,{ liferayParams: liferayParams });
 	 ReactDOM.render(
-		<AppComponent liferayParams={liferayParams} />,
+		rootElement,
 		document.getElementById(liferayParams.portletElementId)
 	);
 }
