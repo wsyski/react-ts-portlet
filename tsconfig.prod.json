@@ -2,7 +2,7 @@
     "extends": "./tsconfig.declarations.json",
     "compilerOptions": {
         "baseUrl": ".",
-        "outDir": "build",
+        "outDir": "out-tsc",
     },
     "include": [
         "src/**/*.ts",

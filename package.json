@@ -20,15 +20,13 @@
     "@types/react-dom": "^16.9.4",
     "@types/warning": "^3.0.0",
     "@types/yup": "^0.24.9",
-    "cpr": "^3.0.1",
-    "cpx": "^1.5.0",
     "cross-env": "^7.0.3",
-    "fs": "^0.0.1-security",
-    "gulp": "^4.0.2",
-    "gulp-dart-sass": "^1.0.2",
     "npm-run-all": "^4.1.5",
     "properties-reader": "^2.2.0",
-    "typescript": "~4.4.4"
+    "react-scripts": "^5.0.1",
+    "sass": "^1.60.0",
+    "rimraf": "^4.4.1",
+    "typescript": "~4.9.5"
   },
   "portlet": {
     "com.liferay.portlet.display-category": "category.sample",
@@ -39,13 +37,12 @@
     "javax.portlet.resource-bundle": "content.Language"
   },
   "scripts": {
-    "scss": "gulp scss",
-    "scss:watch": "gulp scss:watch",
-    "copy-assets": "cpx \"./src/css/**\" build/css",
-    "build": "run-s tsc && run-s copy-assets && cross-env NODE_ENV=production liferay build",
-    "clean": "liferay clean",
+    "sass": "sass src/css/styles.scss src/css/styles.css --source-map",
+    "build-js": "babel --source-maps -d build out-tsc",
+    "build": "run-s build-ts && run-s sass && run-s build-js && liferay-npm-bundler",
+    "clean": "rimraf out-tsc && liferay clean",
     "deploy": "liferay deploy",
-    "tsc": "tsc -b tsconfig.prod.json"
+    "build-ts": "tsc -b tsconfig.prod.json"
   },
   "browserslist": {
     "production": [
