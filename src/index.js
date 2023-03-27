@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import 'react-provider';
+import 'react-provider';
 import AppComponent from './AppComponent';
 export default function main(liferayParams) {
     const rootElement = React.createElement(AppComponent, { liferayParams: liferayParams });
