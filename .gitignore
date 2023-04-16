@@ -1,5 +1,8 @@
-build/*
-dist/*
-node_modules/*
-liferay-npm-bundler-report.html
-.webpack/*
+/node_modules
+/build
+/dist
+/liferay-npm-bundler-report.html
+/yarn.lock
+/.idea
+*.css
+*.map
