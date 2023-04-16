@@ -25,6 +25,13 @@
     "yup": "1.0.2"
   },
   "devDependencies": {
+    "basename": "^0.1.2",
+    "child_process": "^1.0.2",
+    "cpr": "^3.0.1",
+    "fs": "^0.0.1-security",
+    "gulp": "^4.0.2",
+    "path": "^0.12.7",
+    "properties-reader": "^2.2.0",
     "@babel/cli": "~7.21.0",
     "@babel/core": "~7.21.0",
     "@babel/plugin-proposal-nullish-coalescing-operator": "~7.18.6",
@@ -79,12 +86,13 @@
   },
   "scripts": {
     "sass": "sass assets/css/styles.scss assets/css/styles.css --source-map",
-    "build": "run-p tsc sass && run-s babel && liferay-npm-bundler",
+    "build": "run-p tsc sass && run-s babel && cross-env NODE_ENV=production liferay-npm-bundler",
     "clean": "rimraf out-tsc && liferay clean",
-    "deploy": "liferay deploy",
+    "deploy": "gulp deploy",
     "tsc": "tsc -b tsconfig.prod.json",
-    "babel": "babel --source-maps -d build out-tsc",
-    "test": "jest --verbose"
+    "babel": "cross-env NODE_ENV=production babel --source-maps -d build out-tsc",
+    "test": "jest --verbose",
+    "start": "react-scripts start"
   },
   "browserslist": {
     "production": [
