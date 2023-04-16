@@ -7,8 +7,8 @@ import AppContainer from './AppContainer';
 import { PORTLET_INSTANCE_DEFAULT } from './constants/LiferayParamsConstants';
 
 const isPortal = () => {
-    return process.env.NODE_ENV === 'production';
-}
+    return typeof (window as any).Liferay?.FeatureFlags !== 'undefined';
+};
 
 const index = (liferayParams: LiferayParams) => {
     const liferayParamsWithDefaults = LiferayUtil.setLiferayParamsDefaults(liferayParams, PORTLET_INSTANCE_DEFAULT);
