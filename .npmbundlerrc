@@ -1,8 +1,25 @@
 {
-  "config": {
+  "*": {
+    ".babelrc": {
+      "presets": ["liferay-standard"]
+    },
+    "copy-plugins": ["exclude-imports"],
+    "plugins": ["replace-browser-modules"],
+    "post-plugins": [
+      "namespace-packages",
+      "inject-imports-dependencies",
+      "inject-peer-dependencies"
+    ]
+  },
+  "/": {
+    ".babelrc": {
+      "presets": ["liferay-standard"]
+    },
+    "plugins": ["resolve-linked-dependencies"],
+    "post-plugins": ["namespace-packages", "inject-imports-dependencies"]
   },
   "exclude": {
-    "*": ["**/__mocks__/**/*", "**/__tests__/**/*"]
+    "*": ["**/__mocks__/**/*", "**/__tests__/**/*", "**/*.ts", "**/*.tsx"]
   },
   "rules": [
     {
@@ -19,7 +36,7 @@
       "use": ["copy-loader"]
     }
   ],
-  "sources": ["src", "assets"],
+  "sources": ["out-tsc", "assets"],
   "create-jar": {
     "features": {
       "js-extender": true,
